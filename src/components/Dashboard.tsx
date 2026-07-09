@@ -777,11 +777,11 @@ export default function Dashboard() {
           ) : (
             /* RENDERING REAL RECHARTS VISUALS */
             <div className="flex-1 w-full min-h-[500px] flex flex-col justify-between">
-              <div className="flex-1 w-full relative min-h-[400px]">
+              <div className="flex-1 w-full relative min-h-[500px]">
                 {filters.meses.length !== 1 ? (
                   /* BARCHART APILADO FOR SEMESTER VIEW */
                   <div className="absolute inset-0 w-full h-full">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ResponsiveContainer width="100%" height={500}>
                     <BarChart
                       data={chartData}
                       margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
@@ -830,8 +830,8 @@ export default function Dashboard() {
                   /* STACKED BAR CHART FOR MONTH SPECIFIC VIEW */
                   <div className="absolute inset-0 w-full h-full overflow-x-auto select-none scrollbar-thin">
                     {/* Make the chart responsive but wide enough if there are many Comerciales */}
-                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "100%" }}>
-                      <ResponsiveContainer width="100%" height="100%">
+                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "500px" }}>
+                      <ResponsiveContainer width="100%" height={500}>
                         <BarChart
                           data={chartData}
                           margin={{ top: 10, right: 10, left: -20, bottom: 25 }}
