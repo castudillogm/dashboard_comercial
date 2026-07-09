@@ -535,7 +535,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#F6F6F6] text-[#091197] flex flex-col antialiased">
       {/* 1. CORPORATE HEADER */}
       <header className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100 shadow-sm relative z-10">
-        <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="max-w-[1600px] w-full mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <Logo size="md" />
 
           {/* Sync status and Refresh Trigger */}
@@ -593,7 +593,7 @@ export default function Dashboard() {
       </header>
 
       {/* MAIN CONTAINER */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 lg:p-8 flex flex-col gap-6">
+      <main className="flex-1 max-w-[1600px] w-full mx-auto p-4 md:p-6 lg:p-8 flex flex-col gap-6">
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl flex items-start gap-3 shadow-xs animate-fade-in">
             <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
@@ -776,11 +776,12 @@ export default function Dashboard() {
             </div>
           ) : (
             /* RENDERING REAL RECHARTS VISUALS */
-            <div className="flex-1 w-full min-h-[380px] flex flex-col justify-between">
-              <div className="flex-1 w-full relative">
+            <div className="flex-1 w-full min-h-[500px] flex flex-col justify-between">
+              <div className="flex-1 w-full relative min-h-[400px]">
                 {filters.meses.length !== 1 ? (
                   /* BARCHART APILADO FOR SEMESTER VIEW */
-                  <ResponsiveContainer width="100%" height={380}>
+                  <div className="absolute inset-0 w-full h-full">
+                    <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={chartData}
                       margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
@@ -824,12 +825,13 @@ export default function Dashboard() {
                       ))}
                     </BarChart>
                   </ResponsiveContainer>
+                  </div>
                 ) : (
                   /* STACKED BAR CHART FOR MONTH SPECIFIC VIEW */
-                  <div className="w-full h-full overflow-x-auto select-none scrollbar-thin">
+                  <div className="absolute inset-0 w-full h-full overflow-x-auto select-none scrollbar-thin">
                     {/* Make the chart responsive but wide enough if there are many Comerciales */}
-                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%" }}>
-                      <ResponsiveContainer width="100%" height={380}>
+                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "100%" }}>
+                      <ResponsiveContainer width="100%" height="100%">
                         <BarChart
                           data={chartData}
                           margin={{ top: 10, right: 10, left: -20, bottom: 25 }}
