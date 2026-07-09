@@ -781,10 +781,10 @@ export default function Dashboard() {
                 {filters.meses.length !== 1 ? (
                   /* BARCHART APILADO FOR SEMESTER VIEW */
                   <div className="w-full h-full">
-                    <ResponsiveContainer width="100%" height={500}>
+                    <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={chartData}
-                      margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+                      margin={{ top: 10, right: 10, left: -20, bottom: 25 }}
                     >
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F3F4F6" />
                       <XAxis
@@ -831,7 +831,7 @@ export default function Dashboard() {
                   <div className="w-full h-full overflow-x-auto select-none scrollbar-thin">
                     {/* Make the chart responsive but wide enough if there are many Comerciales */}
                     <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "100%" }}>
-                      <ResponsiveContainer width="100%" height={500}>
+                      <ResponsiveContainer width="100%" height="100%">
                         <BarChart
                           data={chartData}
                           margin={{ top: 10, right: 10, left: -20, bottom: 25 }}
