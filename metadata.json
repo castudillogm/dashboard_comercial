@@ -1,0 +1,6 @@
+{
+  "name": "Dashboard de Atenciones Comerciales",
+  "description": "Dashboard interactivo para visualizar y analizar el historial de atenciones comerciales de GrupaMar de forma rápida, fluida y premium.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

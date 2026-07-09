@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Basier Square", "Arial Nova", "Arial", "Inter", sans-serif;
+  --color-brand-dark: #091197;
+  --color-brand-light: #03A9EC;
+  --color-brand-orange: #F75600;
+  --color-brand-gray: #F6F6F6;
+}
+
+body {
+  background-color: #F6F6F6;
+  color: #1f2937;
+  font-family: "Basier Square", "Arial Nova", "Arial", "Inter", sans-serif;
+}
+
