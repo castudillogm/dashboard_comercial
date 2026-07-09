@@ -776,11 +776,11 @@ export default function Dashboard() {
             </div>
           ) : (
             /* RENDERING REAL RECHARTS VISUALS */
-            <div className="w-full flex flex-col justify-between h-[500px]">
-              <div className="w-full relative h-full">
+            <div className="w-full flex flex-col gap-6">
+              <div className="w-full h-[400px] sm:h-[500px]">
                 {filters.meses.length !== 1 ? (
                   /* BARCHART APILADO FOR SEMESTER VIEW */
-                  <div className="absolute inset-0 w-full h-full">
+                  <div className="w-full h-full">
                     <ResponsiveContainer width="100%" height={500}>
                     <BarChart
                       data={chartData}
@@ -828,9 +828,9 @@ export default function Dashboard() {
                   </div>
                 ) : (
                   /* STACKED BAR CHART FOR MONTH SPECIFIC VIEW */
-                  <div className="absolute inset-0 w-full h-full overflow-x-auto select-none scrollbar-thin">
+                  <div className="w-full h-full overflow-x-auto select-none scrollbar-thin">
                     {/* Make the chart responsive but wide enough if there are many Comerciales */}
-                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "500px" }}>
+                    <div style={{ minWidth: chartData.length > 10 ? `${chartData.length * 60}px` : "100%", height: "100%" }}>
                       <ResponsiveContainer width="100%" height={500}>
                         <BarChart
                           data={chartData}
@@ -884,7 +884,7 @@ export default function Dashboard() {
               </div>
 
               {/* Data Summary & Notes Footer */}
-              <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400 font-medium">
+              <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400 font-medium">
                 <span>
                   Visualizando <strong>{formatNumber(filteredData.length)}</strong> registros de atenciones comerciales de GrupaMar.
                 </span>
