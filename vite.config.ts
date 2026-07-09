@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Atenciones-comerciales/',
+    base: '/dashboard_comercial/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
