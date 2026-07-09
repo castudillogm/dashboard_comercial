@@ -727,7 +727,7 @@ export default function Dashboard() {
         </section>
 
         {/* 4. MAIN VISUALIZATION CARD */}
-        <section className="bg-white rounded-[32px] shadow-sm p-8 flex flex-col border border-white flex-1 min-h-[480px]">
+        <section className="bg-white rounded-[32px] shadow-sm p-8 flex flex-col border border-white w-full">
           {/* Visualization Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <h3 className="text-xl font-black text-[#091197] tracking-tight">
@@ -776,8 +776,8 @@ export default function Dashboard() {
             </div>
           ) : (
             /* RENDERING REAL RECHARTS VISUALS */
-            <div className="flex-1 w-full min-h-[500px] flex flex-col justify-between">
-              <div className="flex-1 w-full relative min-h-[500px]">
+            <div className="w-full flex flex-col justify-between h-[500px]">
+              <div className="w-full relative h-full">
                 {filters.meses.length !== 1 ? (
                   /* BARCHART APILADO FOR SEMESTER VIEW */
                   <div className="absolute inset-0 w-full h-full">
